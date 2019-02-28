@@ -10,14 +10,6 @@
     {{ error_message }}</strong></p>{%  endif %}
 <ul>
 
-<form action="{% url 'main_blog:comment' post.id %}" method="post">
-    {% csrf_token %}
-    {% for image in post.imagesfrompost_set.all %}
-        <li><img src="{{ image.image }}" alt="There was image"></li>
-    <label for="image{{ forloop.counter }}">{{ forloop.counter }}</label><br>
-    {% endfor %}
-    <input type="submit" value="Add comment">
-</form>
 </ul>
 </body>
 </html>

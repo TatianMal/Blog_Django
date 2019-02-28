@@ -1,6 +1,5 @@
 from django.db import models
 
-
 class Post(models.Model):
     active = models.BooleanField(null=True)
     date = models.DateTimeField('Date published')
@@ -30,5 +29,4 @@ class Comment(models.Model):
     # id_author TODO: add and set model User from other packages
     date = models.DateTimeField('Date published')
     content = models.TextField()
-    #parent = TODO: set how organaze link from comments
-
+    #parent = TODO: organaze link from comments

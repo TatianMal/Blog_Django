@@ -2,3 +2,4 @@
 .venv
 main_blog/migrations
 settings.py
+manage.py
