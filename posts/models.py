@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Post(models.Model):
     active = models.BooleanField(null=True)
     date = models.DateTimeField('Date published')
