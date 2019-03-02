@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 
 class Post(models.Model):
@@ -7,7 +8,7 @@ class Post(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
     # images = models.ForeignKey()
-    #comments = models.ForeignKey()
+    # comments = models.ForeignKey()
 
     def __str__(self):
         return self.title
@@ -27,7 +28,12 @@ class ImagesFromPost(models.Model):
 
 class Comment(models.Model):
     id_post = models.ForeignKey(Post, on_delete='CASCADE')
-    # id_author TODO: add and set model User from other packages
+    id_author = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.SET_DEFAULT,
+        default=1,
+        #     TODO: create function, where set "deleted" user to mark same users
+    )
     date = models.DateTimeField('Date published')
     content = models.TextField()
-    #parent = TODO: organaze link from comments
+    parent = models.ForeignKey('self', on_delete=models.CASCADE)
