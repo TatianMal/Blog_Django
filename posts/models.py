@@ -1,5 +1,8 @@
 from django.db import models
 from django.conf import settings
+from accounts.models import User
+
+import uuid
 
 
 class Post(models.Model):
@@ -15,10 +18,14 @@ class Post(models.Model):
 
 
 def get_path_to_upload(instance, filename):
-    pass
-    # TODO: write function to create path images (id_post directory)
-    # file will be uploaded to MEDIA_ROOT/user_<id>/<filename>
-    # return 'user_{0}/{1}'.format(instance.user.id, filename)
+    ext = filename.split('.')[-1]  # may loaded other ext?
+    filename = "%s.%s" % (uuid.uuid4(), ext)
+    return 'user_{0}/{1}'.format(instance.post.id, filename)
+
+
+def get_deleted_user():  # static method from User class?
+    del_user = User.objects.get(name="Deleted user")
+    return del_user.id
 
 
 class ImagesFromPost(models.Model):
@@ -31,8 +38,7 @@ class Comment(models.Model):
     id_author = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.SET_DEFAULT,
-        default=1,
-        #     TODO: create function, where set "deleted" user to mark same users
+        default=get_deleted_user(),
     )
     date = models.DateTimeField('Date published')
     content = models.TextField()
