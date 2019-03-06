@@ -1,6 +1,7 @@
 from django_registration.forms import RegistrationForm
 
-from accounts.models import User
+from .models import User
+
 
 class CustomUserForm(RegistrationForm):
     # TODO: add required fields to reg form
