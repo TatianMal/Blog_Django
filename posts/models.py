@@ -1,6 +1,6 @@
 from django.db import models
 from django.conf import settings
-from accounts.models import User
+from django.contrib.auth import get_user_model
 
 import uuid
 
@@ -16,6 +16,10 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        verbose_name = 'Пост'
+        verbose_name_plural = 'Посты'
+
 
 def get_path_to_upload(instance, filename):
     ext = filename.split('.')[-1]  # may loaded other ext?
@@ -24,7 +28,7 @@ def get_path_to_upload(instance, filename):
 
 
 def get_deleted_user():  # static method from User class?
-    del_user = User.objects.get(name="Deleted user")
+    del_user = get_user_model().objects.get(name="Deleted user")
     return del_user.id
 
 
@@ -38,7 +42,7 @@ class Comment(models.Model):
     id_author = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.SET_DEFAULT,
-        default=get_deleted_user(),
+        default=get_deleted_user,
     )
     date = models.DateTimeField('Date published')
     content = models.TextField()
