@@ -16,14 +16,6 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-    def was_published_recently(self):
-        now = timezone.now()
-        return now - timedelta(days=1) < self.date
-
-    was_published_recently.admin_order_field = 'date'
-    was_published_recently.boolean = True
-    was_published_recently.short_description = 'Published recently?'
-
     class Meta:
         verbose_name = 'Пост'
         verbose_name_plural = 'Посты'
@@ -35,8 +27,8 @@ def get_path_to_upload(instance, filename):
     return 'post_{0}/{1}'.format(instance.post.id, filename)
 
 
-def get_deleted_user():  # static method from User class?
-    del_user = get_user_model().objects.get(name="Deleted user")
+def get_deleted_user():
+    del_user, created = get_user_model().objects.get_or_create(username="Deleted user", password='deletedUser')
     return del_user.id
 
 
@@ -46,8 +38,8 @@ class ImagesFromPost(models.Model):
 
 
 class Comment(models.Model):
-    id_post = models.ForeignKey(Post, on_delete='CASCADE')
-    id_author = models.ForeignKey(
+    post = models.ForeignKey(Post, on_delete='CASCADE')
+    author = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.SET_DEFAULT,
         default=get_deleted_user,

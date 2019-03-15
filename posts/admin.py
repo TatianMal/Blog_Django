@@ -9,7 +9,7 @@ class ImagesInline(admin.StackedInline):
 
 class PostAdmin(admin.ModelAdmin):
     inlines = [ImagesInline]
-    list_display = ['title', 'active', 'date', 'was_published_recently']
+    list_display = ['title', 'active', 'date']
     list_filter = ['date', 'active']
     search_fields = ['title']
 
