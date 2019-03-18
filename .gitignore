@@ -1,5 +1,6 @@
 .idea
 .venv
-main_blog/migrations
+/migrations
 settings.py
 manage.py
+media
