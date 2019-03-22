@@ -8,7 +8,7 @@ from django.contrib.auth import get_user_model
 
 
 class Post(models.Model):
-    active = models.BooleanField(null=True)
+    published = models.BooleanField(default=False)
     date = models.DateTimeField('Date published')
     title = models.CharField(max_length=100)
     content = models.TextField()
@@ -47,3 +47,8 @@ class Comment(models.Model):
     date = models.DateTimeField('Date published')
     content = models.TextField()
     parent = models.ForeignKey('self', on_delete=models.CASCADE)
+
+
+class Category(models.Model):
+    posts = models.ManyToManyField(Post)
+    name = models.CharField(max_length=30)

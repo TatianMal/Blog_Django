@@ -1,7 +1,31 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
+from django.views.generic import ListView
+from django.views import View
 
-from .models import Post, Comment
+from .models import Post, Comment, Category
+
+
+class PostList(ListView):
+    arg = 'hii'
+    model = Post
+    context_object_name = 'all_posts'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # context['categories'] = Category.objects.all()
+        if(kwargs.get('arg') is not None):
+            context['arg'] = kwargs['arg']
+        else:
+            context['arg'] = 'Test arg'
+        # TODO: how add the most popular posts by views?
+        return context
+
+
+class PostView(View):
+    pass
+
+
 # TODO: change directory with templates to turn correct reusable static
 def index(request):
     latest_posts = Post.objects.order_by('id')[:5]  # acs, decs (-id)

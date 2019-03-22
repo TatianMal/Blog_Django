@@ -34,7 +34,7 @@ urlpatterns = [
         ),
     path('admin/', admin.site.urls),
 
-    path(r'account/', include('accounts.urls')),
+    path(r'myaccount/', include('accounts.urls')),
 
     path(r'', include('posts.urls')),
 ]

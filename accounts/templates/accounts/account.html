@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Try to show user</title>
+</head>
+<body>
+{% if user_obj %}
+    <h1>{{ user_obj.username }}</h1>
+{% else %}
+    <p>No user are available.</p>
+{% endif %}
+</body>
+</html>

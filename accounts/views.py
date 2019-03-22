@@ -1,3 +1,19 @@
-from django.shortcuts import render
+from django.views.generic import ListView, DetailView
+from django.contrib.auth import get_user_model
+from posts.models import Comment
 
-# Create your views here.
+
+class CommentsView(ListView):
+    model = Comment
+    context_object_name = 'all_comment'
+    # TODO: done that with session keys for safety other users
+
+
+class AccountView(DetailView):
+    model = get_user_model()
+    context_object_name = 'user_obj'
+    # TODO: done that with session keys for safety other users
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['latest_comments'] = Comment.objects.filter(id__lte=2)
+        return context
