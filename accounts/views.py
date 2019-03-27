@@ -11,6 +11,7 @@ class CommentsView(ListView):
 
 class AccountView(DetailView):
     model = get_user_model()
+    template_name = 'accounts/account.html'
     context_object_name = 'user_obj'
     # TODO: done that with session keys for safety other users
     def get_context_data(self, **kwargs):

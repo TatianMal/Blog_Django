@@ -12,6 +12,7 @@
     {% endfor %}
     </ul>
     <p style="color: blue">{{ arg }}</p>
+    <p>{{ request.path }}</p>
 {% else %}
     <p>No posts are available.</p>
 {% endif %}

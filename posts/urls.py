@@ -3,10 +3,10 @@ from . import views
 
 app_name = 'posts'
 urlpatterns = [
-    path('', views.PostList.as_view(template_name='index.html', arg='hello')),  # get with filter
-    path(r'unpublished/', views.add_comment, name='comment'),
-    path(r'post/create', views.add_comment, name='comment'),  # post - in that page
-    path(r'post/<int:post_id>/', views.detail_post, name='detail'),  # get
-    path(r'post/<int:post_id>/preview', views.add_comment, name='comment'),  # get?? method preview
-    path(r'post/<int:post_id>/edit', views.add_comment, name='comment'),  # patch - in that page
+    path('', views.PostList.as_view(), name='index'),  # get with filter
+    path(r'unpublished/', views.PostList.as_view(published=False), name='unpublished_posts'),
+    path(r'post/create/', views.CreatePostView.as_view(), name='create_post'),  # post - in that page
+    path(r'post/<int:post_id>/', views.PostView.as_view(), name='view_post'),  # get
+    path(r'post/<int:post_id>/preview/', views.PostPreviewView.as_view(), name='preview_post'),  # get?? method preview
+    path(r'post/<int:post_id>/edit/', views.UpdatePostView.as_view(), name='update_post'),  # patch - in that page
 ]
