@@ -6,6 +6,7 @@ from posts.models import Comment
 class CommentsView(ListView):
     model = Comment
     context_object_name = 'all_comment'
+    template_name = 'accounts/comments.html'
     # TODO: done that with session keys for safety other users
 
 
