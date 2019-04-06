@@ -10,6 +10,92 @@
 {% include 'header.html' %}
 {% block content %}
 {% endblock content %}
+<section class="container">
+    <section class="articles">
+        <article>
+            <header>
+                <h1>Post header</h1>
+                <div class="status">
+                    <time class="date">date publish</time>
+                    <span class="post_categories">categories of post</span>
+                    <span class="comments">count comments</span>
+                </div>
+            </header>
+            <img src="" alt="" class="main_img">
+            <div class="description">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Atque blanditiis, dicta doloribus fugit molestiae nobis rem repellat!
+                Aliquam cumque dignissimos doloribus eos in laboriosam, nostrum numquam
+                praesentium quam voluptatem. Itaque!
+            </div>
+            <div class="social">Social media button</div>
+            <a href="" class="readmore">Readmore</a>
+        </article>
+        <article>
+            <header>
+                <h1>Post header</h1>
+                <div class="status">
+                    <time class="date">date publish</time>
+                    <span class="post_categories">categories of post</span>
+                    <span class="comments">count comments</span>
+                </div>
+            </header>
+            <img src="" alt="" class="main_img">
+            <div class="description">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Atque blanditiis, dicta doloribus fugit molestiae nobis rem repellat!
+                Aliquam cumque dignissimos doloribus eos in laboriosam, nostrum numquam
+                praesentium quam voluptatem. Itaque!
+            </div>
+            <div class="social">Social media button</div>
+            <a href="" class="readmore">Readmore</a>
+        </article>
+        <div class="paginator">paginator will be here</div>
+    </section>
+    <aside>
+        <div class="search">
+            <form action="" class="search">
+                <input type="text" name="search" id="">
+                <button type="submit" class="searchbutton">Search</button>
+            </form>
+        </div>
+        <div class="categories">
+            <p class="head">Categories</p>
+            <ul>
+                <li><a href="">HTML</a></li>
+                <li><a href="">Cascade Style Cheets</a></li>
+                <li><a href="">JavaScript</a></li>
+                <li><a href="">Python</a></li>
+            </ul>
+        </div>
+        <div class="popular">
+            <p class="head">Most popular posts</p>
+            <ul>
+                <li class="popular_post">
+                    <img src="{% static 'image/1.png' %}" alt="image post">
+                    <div class="short_info">
+                        <a href="">Name Post</a>
+                        <span>Post date</span>
+                    </div>
+                </li>
+                <li class="popular_post">
+                    <img src="{% static 'image/1.png' %}" alt="image post">
+                    <div class="short_info">
+                        <a href="">Name Post</a>
+                        <span>Post date</span>
+                    </div>
+                </li>
+                <li class="popular_post">
+                    <img src="{% static 'image/1.png' %}" alt="image post">
+                    <div class="short_info">
+                        <a href="">Name Post</a>
+                        <span>Post date</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </aside>
+</section>
 
 {% include 'footer.html' %}
 

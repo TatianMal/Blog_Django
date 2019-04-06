@@ -9,7 +9,7 @@ from .models import Post, Comment, Category
 class PostList(ListView):
     published = True
     model = Post
-    template_name = 'index.html'
+    template_name = 'base.html'
     context_object_name = 'all_posts'
 
     def get_context_data(self, **kwargs):
