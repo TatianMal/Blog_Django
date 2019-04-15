@@ -7,15 +7,15 @@ html, body{
     background-color: #f6f5f2;
 }
 
-header.main_header, footer,
-section.container{
+.main_header, footer,
+section.container, .warning_unpublished{
     margin: 20px auto;
     width: 65%;
     display: flex;
     min-height: 50px;
 }
 
-header.main_header{
+.main_header{
     background-color: #343434;
     color: white;
     justify-content: space-between;
@@ -54,6 +54,15 @@ nav a:hover{
     background-color: aqua;
 }
 
+.warning_unpublished{
+    background-color: darkred;
+    padding: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+    color: white;
+}
+
 .articles{
     margin: 15px;
     width: 65%;
@@ -69,15 +78,16 @@ nav a:hover{
     flex-direction: column;
 }
 
-article .status{
+.status{
     display: flex;
+    color: #AAAAAA;
 }
 
 article .date{
     border: 3px solid #343434;
 }
 
-article .status span{
+.status span{
     border: 3px solid #343434;
 }
 
@@ -191,6 +201,18 @@ p.head{
     color: #aaaaaa;
     font-size: 11px;
     text-transform: uppercase;
+}
+
+.post_head{
+    font-size: 24px;
+    margin: 0;
+}
+
+.description{
+    margin: 25px;
+    font-size: 16px;
+    line-height: 1.7em;
+    color: #555555;
 }
 
 footer{

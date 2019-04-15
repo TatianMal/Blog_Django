@@ -2,6 +2,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, DateDetailView, FormView, UpdateView, CreateView
 from django.views import View
+from django.utils import timezone
 
 from .models import Post, Comment, Category
 
@@ -19,10 +20,10 @@ class PostList(ListView):
         return context
 
     def get_queryset(self):
-        return Post.objects.filter(published=self.published)
+        return Post.objects.filter(published=self.published, date__lt=timezone.now()).order_by('-date')
 
 
-class PostView(DateDetailView):
+class PostView(DetailView):
     model = Post
     context_object_name = 'post'
 

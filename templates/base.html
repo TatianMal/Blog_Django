@@ -10,11 +10,14 @@
 {% include 'header.html' %}
 {% block content %}
 {% endblock content %}
+<section class="warning_unpublished">
+    <p>Warning! You are on the page with unpublished posts!</p>
+</section>
 <section class="container">
     <section class="articles">
         <article>
             <header>
-                <h1>Post header</h1>
+                <h1 class="post_head">Post header</h1>
                 <div class="status">
                     <time class="date">date publish</time>
                     <span class="post_categories">categories of post</span>
@@ -33,7 +36,7 @@
         </article>
         <article>
             <header>
-                <h1>Post header</h1>
+                <h1 class="post_head">Post header</h1>
                 <div class="status">
                     <time class="date">date publish</time>
                     <span class="post_categories">categories of post</span>
