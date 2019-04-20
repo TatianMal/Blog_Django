@@ -1,3 +1,4 @@
+/*general styles*/
 html, body{
     margin: 0;
     padding: 0;
@@ -8,13 +9,17 @@ html, body{
 }
 
 .main_header, footer,
-section.container, .warning_unpublished{
+main, .warning_unpublished{
     margin: 20px auto;
     width: 65%;
     display: flex;
     min-height: 50px;
 }
 
+main{
+    margin-bottom: 0;
+}
+/*header styles*/
 .main_header{
     background-color: #343434;
     color: white;
@@ -53,7 +58,7 @@ nav a{
 nav a:hover{
     background-color: aqua;
 }
-
+/*unpublished styles*/
 .warning_unpublished{
     background-color: darkred;
     padding: 15px;
@@ -62,9 +67,9 @@ nav a:hover{
     box-sizing: border-box;
     color: white;
 }
-
+/*articles styles*/
 .articles{
-    margin: 15px;
+    margin: 15px 15px 0 15px;
     width: 65%;
     display: flex;
     flex-direction: column;
@@ -73,59 +78,149 @@ nav a:hover{
 .articles article{
     margin-bottom: 20px;
     background-color: white;
-    padding: 20px;
     display: flex;
     flex-direction: column;
+}
+
+.article_header{
+    padding: 30px 50px;
+}
+
+.post_categories a:hover{
+    color: #2ecc71;
 }
 
 .status{
     display: flex;
     color: #AAAAAA;
-}
-
-article .date{
-    border: 3px solid #343434;
-}
-
-.status span{
-    border: 3px solid #343434;
-}
-
-article .status{
     flex-grow: 1;
 }
 
+.status .date, .status span{
+    margin-right: 15px;
+    font-size: 14px;
+}
+
+article .date::before{
+    font-family: "Font Awesome 5 Free";
+    content: "\f017";
+    margin-right: 5px;
+}
+
+.status .post_categories::before{
+    font-family: "Font Awesome 5 Free";
+    content: "\f07c";
+    margin-right: 5px;
+}
+
+.status .comments::before{
+    font-family: "Font Awesome 5 Free";
+    content: "\f086";
+    margin-right: 5px;
+}
+
+.post_categories a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.post_categories a:hover{
+    color: #2ecc71;
+}
+
+.post_head{
+    font-size: 28px;
+    text-transform: uppercase;
+    margin: 0 0 5px 0;
+    font-weight: 700;
+}
+
+.post_head a{
+    text-decoration: none;
+    color: #444444;
+}
+
+.post_head a:hover{
+    color: #2ecc71;
+}
+
+.description{
+    margin: 25px 40px;
+    font-size: 16px;
+    line-height: 1.7em;
+    color: #555555;
+}
+
+.readmore{
+    align-self: flex-end;
+    color: white;
+    text-decoration: none;
+    background-color: #2ecc71;
+    padding: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.readmore::after{
+    font-family: "Font Awesome 5 Free";
+    font-size: 16px;
+    content: "  \f35a";
+}
+/*paginator styles*/
+.paginator{
+    margin: 10px 0;
+}
+
+.paginator a,
+.paginator span{
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    min-width: 15px;
+    color: white;
+    padding: 10px 15px;
+    background-color: #343434;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+}
+
+.paginator a:hover{
+    background-color: #2ecc71;
+}
+/*aside styles*/
 aside{
     width: 35%;
 }
-
-aside div{
+/*search form styles*/
+aside section, .search{
     background-color: white;
-    margin: 10px;
+    margin: 15px;
     padding-bottom: 15px;
 }
 
-div.search{
-    padding: 20px;
+.search{
+    padding: 5px;
+}
+
+input[name="search"],
+button.searchbutton{
+    color: white;
+    border: none;
+    padding: 8px;
 }
 
 input[name="search"]{
     background-color: #343434;
-    color: white;
-    border: none;
-    padding: 8px;
 }
 
-button.searchbutton{
+.searchbutton{
     background-color: #2ecc71;
-    color: white;
     font-weight: bold;
     text-transform: uppercase;
-    padding: 8px;
-    border: none;
 }
-
-p.head{
+/*categories styles*/
+h3.head{
     padding: 20px;
     font-size: 14px;
     font-family: 'Montserrat', sans-serif;
@@ -146,9 +241,8 @@ p.head{
 
 .categories li{
     border-bottom: 1px solid #f6f5f2;
-    padding-top: 10px;
+    padding: 10px 0;
     display: list-item;
-    padding-bottom: 10px;
 }
 
 .categories li:last-child{
@@ -157,8 +251,10 @@ p.head{
 
 .categories a{
     text-decoration: none;
-    color: #343434;
+    color: #444444;
 }
+
+/*popular post styles*/
 
 .popular_post{
     position: relative;
@@ -203,18 +299,7 @@ p.head{
     text-transform: uppercase;
 }
 
-.post_head{
-    font-size: 24px;
-    margin: 0;
-}
-
-.description{
-    margin: 25px;
-    font-size: 16px;
-    line-height: 1.7em;
-    color: #555555;
-}
-
+/*footer styles*/
 footer{
     background-color: #343434;
     color: white;
