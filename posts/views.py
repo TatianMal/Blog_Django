@@ -15,12 +15,13 @@ class PostList(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # context['categories'] = Category.objects.all()
+        context['categories'] = Category.objects.all()
         # TODO: how add the most popular posts by views?
         return context
 
     def get_queryset(self):
-        return Post.objects.filter(published=self.published, date__lt=timezone.now()).order_by('-date')
+        return Post.objects.filter(published=self.published,
+                                   date__lt=timezone.now()).order_by('-date')
 
 
 class PostView(DetailView):

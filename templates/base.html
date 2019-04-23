@@ -8,50 +8,39 @@
     <link rel="stylesheet" href="{% static "css/main.css" %}">
 </head>
 <body>
+
 {% include 'header.html' %}
-{% block content %}
-{% endblock content %}
+
 <section class="warning_unpublished">
     <p>Warning! You are on the page with unpublished posts!</p>
 </section>
 <main>
     <section class="articles">
+        {% for post in all_posts %}
         <article>
             <header class="article_header">
-                <h1 class="post_head"><a href="#">Post header</a></h1>
+                <h1 class="post_head">
+                    <a href="#">{{ post.title }}</a>
+                </h1>
                 <div class="status">
-                    <time class="date">Date publish, April 14, 2019</time>
-                    <span class="post_categories"><a href="#">HTML, CSS, Python</a></span>
+                    <time class="date">{{ post.date|date:"j F, H:i" }}</time>
+                    <span class="post_categories">
+                        {% for category in post.category_set.all %}
+                            <a href="#{{ category.id }}">
+                                {{ category.name }}{% if not forloop.last %},{% endif %}
+                            </a>
+                        {% endfor %}
+                    </span>
                     <span class="comments">No comments</span>
                 </div>
             </header>
             <img src="{% static 'image/2.jpeg' %}" alt="image post" class="article_img">
             <div class="description">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Atque blanditiis, dicta doloribus fugit molestiae nobis rem repellat!
-                Aliquam cumque dignissimos doloribus eos in laboriosam, nostrum numquam
-                praesentium quam voluptatem. Itaque!
+                {{ post.content }}
             </div>
-            <a href="" class="readmore">Read more</a>
+            <a href="#" class="readmore">Read more</a>
         </article>
-        <article>
-            <header class="article_header">
-                <h1 class="post_head"><a href="#">Post header</a></h1>
-                <div class="status">
-                    <time class="date">Date publish, April 14, 2019</time>
-                    <span class="post_categories"><a href="#">HTML, CSS, Python</a></span>
-                    <span class="comments">No comments</span>
-                </div>
-            </header>
-            <img src="{% static 'image/2.jpeg' %}" alt="image post" class="article_img">
-            <div class="description">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Atque blanditiis, dicta doloribus fugit molestiae nobis rem repellat!
-                Aliquam cumque dignissimos doloribus eos in laboriosam, nostrum numquam
-                praesentium quam voluptatem. Itaque!
-            </div>
-            <a href="" class="readmore">Read more</a>
-        </article>
+        {% endfor %}
         <div class="paginator">
             <a href="#1">1</a>
             <span>&hellip;</span>
@@ -69,10 +58,9 @@
         <section class="categories">
             <h3 class="head">Categories</h3>
             <ul>
-                <li><a href="">HTML</a></li>
-                <li><a href="">Cascade Style Cheets</a></li>
-                <li><a href="">JavaScript</a></li>
-                <li><a href="">Python</a></li>
+                {% for category in categories %}
+                    <li><a href="">{{ category.name }}</a></li>
+                {% endfor %}
             </ul>
         </section>
         <section class="popular">

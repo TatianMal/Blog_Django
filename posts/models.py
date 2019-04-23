@@ -36,6 +36,10 @@ class ImagesFromPost(models.Model):
     post = models.ForeignKey(Post, on_delete='CASCADE')
     image = models.ImageField(upload_to=get_path_to_upload)
 
+    class Meta:
+        verbose_name = 'Изображение'
+        verbose_name_plural = 'Изображения'
+
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete='CASCADE')
@@ -48,7 +52,21 @@ class Comment(models.Model):
     content = models.TextField()
     parent = models.ForeignKey('self', on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.author.name + " " + self.post.title
+
+    class Meta:
+        verbose_name = 'Комментарий'
+        verbose_name_plural = 'Комментарии'
+
 
 class Category(models.Model):
     posts = models.ManyToManyField(Post)
     name = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Категория'
+        verbose_name_plural = 'Категории'
