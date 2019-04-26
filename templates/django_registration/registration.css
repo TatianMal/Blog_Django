@@ -1,0 +1,62 @@
+body{
+    height: 600px;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f6f5f2;
+    justify-content: center;
+}
+
+section{
+    box-sizing: border-box;
+    width: 60%;
+    margin: 50% auto;
+    font-size: 24px;
+    padding: 20px 50px;
+    text-align: center;
+}
+
+.activation_complete{
+    color: #006e37;
+    background-color: #b9eacb;
+}
+
+.registration_complete{
+    color: #00538c;
+    background-color: #ceedff;
+}
+
+.activation_failed{
+    color: #980050;
+    background-color: #ffbabc;
+}
+
+.error{
+    font-weight: bold;
+}
+
+.back_main{
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.btn_reg{
+    background-color: #0083cd;
+}
+
+.btn_act{
+    background-color: #2ecc71;
+}
+
+.btn_fail{
+    background-color: #CD0083;
+}
