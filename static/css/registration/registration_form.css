@@ -1,0 +1,100 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f6f5f2;
+    justify-content: center;
+    align-content: center;
+}
+
+h1{
+    background-color: #343434;
+    color: white;
+    text-transform: uppercase;
+    margin: 0 0 20px 0;
+    padding: 25px 0;
+    text-align: center;
+    font-size: 24px;
+}
+
+/*form styles*/
+
+.form_reg{
+    width: 50%;
+    margin: 50px auto;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+form{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.helptext{
+    display: none;
+}
+
+.back_main{
+    display: inline-block;
+    color: #444444;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.back_main:hover{
+    color: #2ecc71;
+}
+
+.reg_user{
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #2ecc71;
+    border: none;
+    margin-right: 20px;
+}
+
+.form_element{
+    padding: 20px;
+}
+
+input:not([type="submit"]){
+    box-sizing: border-box;
+    padding: 5px;
+    width: 100%;
+    font-size: 18px;
+    border: none;
+    border-bottom: 1px solid #757575;
+}
+
+.label-box {
+    position: relative;
+    width: 270px;
+}
+
+label {
+    color: #757575;
+    font-size: 18px;
+    pointer-events: none;
+    transition: 0.2s ease all;
+    position: absolute;
+    top: -36px;
+}
+
+input:focus ~ .label-box label,
+input:valid ~ .label-box label {
+    font-size: 14px;
+    transform: translateY(-20px);
+}

@@ -1,16 +1,17 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Registration complete</title>
-    <link rel="stylesheet" href="registration.css">
+    <link rel="stylesheet" href="{% static "css/registration/registration.css" %}">
 </head>
 <body>
 <section class="registration_complete">
     <div>
         <p>Congratulations, registration is successfully completed!</p>
-        <p>Check your email: <span>ex@example.com</span> to finish activation account.</p>
-        <a href="#" class="back_main btn_reg">Back to main</a>
+        <p>Check your email to finish activating account.</p>
+        <a href="{% url "index" %}" class="back_main btn_reg">Back to main</a>
     </div>
 </section>
 </body>
