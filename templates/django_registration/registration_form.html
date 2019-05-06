@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Sign up</title>
     <link rel="stylesheet" href="{% static "css/registration/registration_form.css" %}">
 </head>
 <body>
@@ -18,7 +18,7 @@
                     {{ field.label_tag }}
                 </div>
                 {% if field.errors %}
-                    <div class="myerrors clearfix">{{ field.errors }}</div>
+                    <div class="error_field">{{ field.errors }}</div>
                 {% endif %}
             </div>
         {% endfor %}

@@ -1,11 +1,13 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <link rel="stylesheet" href="{% static "css/registration/registration_form.css" %}">
 </head>
 <body>
-    <div class="form_reg">
+    <div class="form_login">
     <h1>Login</h1>
     <form method="post" action="">
         {% csrf_token %}
@@ -15,13 +17,13 @@
                 <div class="label-box">
                     {{ field.label_tag }}
                 </div>
-                {% if field.errors %}
-                    <div class="myerrors clearfix">{{ field.errors }}</div>
+               {% if field.errors %}
+                    <div class="error_field">{{ field.errors }}</div>
                 {% endif %}
             </div>
         {% endfor %}
     <div class="form_element">
-        <input type="submit" class="reg_user" value="Sign up">
+        <input type="submit" class="login_user" value="Login">
         <a href="{% url "posts:index" %}" class="back_main">Back to main</a>
     </div>
     </form>

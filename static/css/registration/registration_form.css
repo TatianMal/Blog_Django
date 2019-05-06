@@ -21,7 +21,7 @@ h1{
 
 /*form styles*/
 
-.form_reg{
+.form_reg, .form_login{
     width: 50%;
     margin: 50px auto;
     background-color: white;
@@ -34,6 +34,11 @@ form{
     display: flex;
     flex-direction: column;
     width: 70%;
+}
+
+.error_field{
+    color: darkred;
+    font-weight: bold;
 }
 
 .helptext{
@@ -53,7 +58,7 @@ form{
     color: #2ecc71;
 }
 
-.reg_user{
+.reg_user, .login_user{
     display: inline-block;
     color: white;
     text-decoration: none;
@@ -94,7 +99,7 @@ label {
 }
 
 input:focus ~ .label-box label,
-input:valid ~ .label-box label {
+input:valid ~ .label-box label{
     font-size: 14px;
     transform: translateY(-20px);
 }

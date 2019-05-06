@@ -1,5 +1,5 @@
 /*general styles*/
-html, body{
+body{
     margin: 0;
     padding: 0;
     display: flex;
@@ -93,11 +93,11 @@ nav a:hover{
 .status{
     display: flex;
     color: #AAAAAA;
-    flex-grow: 1;
+    flex-wrap: wrap;
 }
 
 .status .date, .status span{
-    margin-right: 15px;
+    margin-right: 20px;
     font-size: 14px;
 }
 
@@ -200,7 +200,13 @@ aside section, .search{
 }
 
 .search{
-    padding: 5px;
+    padding: 15px 5px;
+}
+
+.search_form{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 input[name="search"],
@@ -208,6 +214,15 @@ button.searchbutton{
     color: white;
     border: none;
     padding: 8px;
+    font-size: 0.8em;
+}
+
+input[name="search"]{
+
+}
+
+button.searchbutton{
+    font-size: 14px;
 }
 
 input[name="search"]{
@@ -254,50 +269,6 @@ h3.head{
     color: #444444;
 }
 
-/*popular post styles*/
-
-.popular_post{
-    position: relative;
-}
-
-.popular ul{
-    list-style: none;
-    margin: 0 10px;
-    padding: 0;
-}
-
-.popular_post img{
-    position: absolute;
-    top: -10px;
-    left: 10px;
-    width: 70px;
-}
-
-.popular_post .short_info{
-    margin-left: 90px;
-    margin-bottom: 30px;
-}
-
-.popular_post a{
-    text-decoration: none;
-    color: #444444;
-    font-size: 13px;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.popular_post a:hover{
-    color: #2ecc71;
-}
-
-.popular_post .short_info span{
-    display: block;
-    margin-top: 10px;
-    color: #aaaaaa;
-    font-size: 11px;
-    text-transform: uppercase;
-}
 
 /*footer styles*/
 footer{
