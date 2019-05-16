@@ -1,0 +1,142 @@
+.article_full{
+    margin: 15px 15px 0 15px;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+}
+
+.warning_guest{
+    display: none;
+    color: #980050;
+    background-color: #ffbabc;
+    padding: 20px;
+}
+
+.warning_guest a{
+    color: #980050;
+}
+
+.warning_guest a:hover{
+    color: #fc2a8d;
+    text-decoration: none;
+}
+
+.list_comments{
+    background-color: white;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+.list_comments ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.comment_card{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+    padding-bottom: 5px;
+}
+
+.admin::before{
+    content: "admin";
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: -35px;
+    background-color: rgba(0, 154, 243, 0.5);
+    color: #003b67;
+    font-size: 12px;
+    padding: 3px;
+}
+
+.comment_card:last-child{
+    border: none;
+    margin-bottom: 5px;
+}
+
+.comment_header{
+    padding: 5px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    position: relative;
+}
+
+.author_name{
+    color: black;
+    font-size: 18px;
+}
+
+.date_comment::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f017";
+    margin-right: 5px;
+}
+
+.date_comment{
+    color: #555555;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-left: 20px;
+}
+
+.comment_body{
+    padding: 5px 15px;
+    color: #343434;
+}
+
+.form_comment_wrapper{
+    background-color: white;
+}
+
+.add_comment{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 40px;
+}
+
+.add_comment > *{
+    margin: 5px 0;
+}
+
+.first_comment_header{
+    padding-top: 5px;
+    padding-bottom: 20px;
+    text-align: center;
+    display: block;
+    box-sizing: border-box;
+    border-bottom: 1px solid #EEEEEE;
+    text-transform: uppercase;
+    color: #555555;
+    font-size: 20px;
+}
+
+#text_comment{
+    padding: 10px;
+    background-color: #EEEEEE;
+    border: none;
+    color: #555555;
+    font-size: 14px;
+    width: 70%;
+    min-height: 150px;
+}
+
+.send_comment{
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    background-color: #343434;
+    cursor: pointer;
+}
+
+.send_comment:hover{
+    background-color: #2ecc71;
+}

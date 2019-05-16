@@ -75,7 +75,7 @@ nav a:hover{
     flex-direction: column;
 }
 
-.articles article{
+article{
     margin-bottom: 20px;
     background-color: white;
     display: flex;

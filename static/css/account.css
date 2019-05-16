@@ -1,0 +1,125 @@
+.account_info{
+    margin: 20px auto;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 50px;
+    box-sizing: border-box;
+    padding: 20px 60px;
+    background-color: white;
+}
+
+.head_account{
+    margin-left: 10px;
+}
+
+.commented_articles,
+.general_info{
+    margin: 10px 10px;
+}
+
+.general_info{
+    display: flex;
+    flex-direction: column;
+}
+
+.user_data{
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.user_data p{
+    margin-right: 15px;
+}
+
+input[name^="change_"]{
+    padding: 10px 5px;
+}
+
+input[name="change_name"],
+input[name="change_email"]{
+    flex-basis: 70%;
+}
+
+.change_user_data{
+    margin: 5px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.pswd{
+    flex-direction: column;
+}
+
+.pswd > *{
+    margin: 5px 0;
+}
+
+/*.change_user_data{*/
+    /*display: none;*/
+/*}*/
+
+.change_btn,
+.submit_btn{
+    align-self: center;
+    border: none;
+    padding: 10px 15px;
+    background-color: #0083cd;
+    color: white;
+    cursor: pointer;
+}
+
+.submit_btn{
+    background-color: #2ecc71;
+}
+
+.change_btn:hover{
+    background-color: #00a3f0;
+}
+
+.submit_btn:hover{
+    background-color: #2ee687;
+}
+
+.notification_setting{
+    margin: 10px;
+}
+
+.list_articles{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.article_card{
+    display: flex;
+    flex-direction: column;
+    padding: 15px 30px 25px;
+    border-left: 5px solid #0083cd;
+    margin: 10px 0;
+    box-shadow: 1px 1px 1px rgba(85, 85, 85, 0.7);
+    text-decoration: none;
+}
+
+.article_card:hover{
+    border-color: #12cd19;
+}
+
+.article_title{
+    color: #343434;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.article_description{
+    color: #5f5f5f;
+    font-size: 14px;
+}
+
+.commented_articles h1{
+    text-align: center;
+}

@@ -1,14 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Try to show user</title>
-</head>
-<body>
-{% if user_obj %}
-    <h1>{{ user_obj.username }}</h1>
-{% else %}
-    <p>No user are available.</p>
-{% endif %}
-</body>
-</html>
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Account page{% endblock %}
+
+{% block additional_styles %}
+    <link rel="stylesheet" href="{% static "css/account.css" %}">
+{% endblock %}
+
+{% block content %}
+<main class="account_info">
+    <h1 class="head_account">Welcome to account!</h1>
+    <section class="general_info">
+        <div class="user_data">
+            <p>Login: <span id="login">Username</span></p>
+            <button class="change_btn">Change login</button>
+        </div>
+        <form action="" class="change_user_data">
+            <input type="text" name="change_name" id="change_name" placeholder="Enter new login">
+            <input type="submit" value="Save" class="submit_btn">
+        </form>
+        <div class="user_data">
+            <p>Email: <span id="email">Username</span></p>
+            <button class="change_btn">Change email</button>
+        </div>
+        <form action="" class="change_user_data">
+            <input type="text" name="change_email" id="change_email" placeholder="Enter new email">
+            <input type="submit" value="Save" class="submit_btn">
+        </form>
+        <div class="user_data">
+            <p>Password last update: <span id="password">03-15-2019 13:00</span></p>
+            <button class="change_btn">Change password</button>
+        </div>
+        <form action="" class="change_user_data pswd">
+            <input type="text" name="change_password" id="change_password" placeholder="Enter new password">
+            <input type="text" name="change_password_conf" id="change_password_conf" placeholder="Enter new password again">
+            <input type="submit" value="Save" class="submit_btn">
+        </form>
+        <form action="" class="notification_setting">
+            <input type="checkbox" name="agreement_notification" id="agreement_notification">
+            <label for="agreement_notification">I agree to send email notifications about new posts</label>
+        </form>
+    </section>
+    <section class="commented_articles">
+        <h1>Posts which you commented</h1>
+        <ul class="list_articles">
+            <li>
+                <a href="" class="article_card">
+                    <span class="article_title">Post name</span>
+                    <span class="article_description">Lorem ipsum dolor sit amet,
+                        consectetur adipisicing elit Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
+                        Lorem ipsum dolor sit amet...</span>
+                </a>
+            </li>
+            <li>
+                <a href="" class="article_card">
+                    <span class="article_title">Post name</span>
+                    <span class="article_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                        Lorem ipsum dolor sit amet...</span>
+                </a>
+            </li>
+            <li>
+                <a href="" class="article_card">
+                    <span class="article_title">Post name</span>
+                    <span class="article_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                        Lorem ipsum dolor sit amet...</span>
+                </a>
+            </li>
+        </ul>
+    </section>
+</main>
+
+{% endblock %}

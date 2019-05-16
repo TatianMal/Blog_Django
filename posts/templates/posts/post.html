@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block additional_styles %}
+    <link rel="stylesheet" href="{% static "css/post.css" %}">
+{% endblock %}
+
+{%  block content %}
+<main>
+    <section class="article_full">
+        <article>
+            <header class="article_header">
+                <h1 class="post_head"><a href="#">{{ post.title }}</a></h1>
+                <div class="status">
+                    <time class="date">{{ post.date|date:"j F, H:i" }}</time>
+                    <span class="post_categories">
+                        {% for category in post.category_set.all %}
+                            <a href="#{{ category.id }}">
+                                {{ category.name }}{% if not forloop.last %},{% endif %}
+                            </a>
+                        {% endfor %}
+                    </span>
+                    <span class="comments">No comments</span>
+                </div>
+            </header>
+            <img src="{% static 'image/2.jpeg' %}" alt="image post" class="article_img">
+            <div class="description">
+                {{ post.content }}
+
+                At commodi culpa cumque ex hic ipsam iusto libero magnam minima molestiae odio officia omnis porro
+                    provident quisquam rerum similique temporibus tenetur, veritatis vero. Amet reiciendis sapiente sed
+                    veritatis vitae?
+
+                Adipisci aliquid, architecto assumenda delectus, ducimus eligendi esse et excepturi fuga inventore ipsa
+                    magni molestiae molestias mollitia neque omnis praesentium quam quas quis quos repudiandae similique
+                    tempora ullam unde voluptas.
+
+                Accusamus consectetur cumque distinctio doloribus eligendi, ex, harum placeat quasi qui repellat sed
+                    tenetur velit voluptatibus! Asperiores aut consectetur, delectus ea in ipsam, laudantium nemo, numquam
+                    praesentium quasi quis totam?
+
+            </div>
+            <a href="" class="readmore">Read more</a>
+        </article>
+
+        <div class="warning_guest">
+            Sorry, but only registered users can add comments. You can sign up <a href="#">here</a>.
+        </div>
+
+        <div class="form_comment_wrapper">
+            <h3 class="first_comment_header">Your comment</h3>
+            <!--No Comments, Be The First!-->
+            <form action="" class="add_comment">
+                <textarea name="text_comment" id="text_comment" placeholder="Enter message here"></textarea>
+                <input type="submit" value="Send comment" class="send_comment">
+            </form>
+        </div>
+
+        <section class="list_comments">
+            <ul>
+                <li class="comment_card">
+                    <div class="comment_header">
+                        <span class="author_name">Tatiana Maltseva</span>
+                        <span class="date_comment">19 March 2019, 15:27</span>
+                    </div>
+                    <div class="comment_body">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Atque ducimus eaque, eos eveniet fugit pariatur. Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit.
+                        Atque ducimus eaque, eos eveniet fugit pariatur.</div>
+                </li>
+                <li class="comment_card">
+                    <div class="comment_header">
+                        <span class="author_name admin">Tatiana Maltseva</span>
+                        <span class="date_comment">19 March 2019, 15:27</span>
+                    </div>
+                    <div class="comment_body">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Atque ducimus eaque, eos eveniet fugit pariatur.</div>
+                </li>
+                <li class="comment_card">
+                    <div class="comment_header">
+                        <span class="author_name">Tatiana Maltseva</span>
+                        <span class="date_comment">19 March 2019, 15:27</span>
+                    </div>
+                    <div class="comment_body">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Atque ducimus eaque, eos eveniet fugit pariatur.</div>
+                </li>
+            </ul>
+        </section>
+    </section>
+
+    <aside>
+        <div class="search">
+            <form action="" class="search_form">
+                <input type="text" name="search" id="">
+                <button type="submit" class="searchbutton">Search</button>
+            </form>
+        </div>
+        <section class="categories">
+            <h3 class="head">Categories</h3>
+            <ul>
+                {% for category in categories %}
+                    <li><a href="">{{ category.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </section>
+
+    </aside>
+</main>
+
+{% endblock %}
